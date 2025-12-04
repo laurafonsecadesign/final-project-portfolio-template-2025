@@ -1,0 +1,509 @@
+/* HEADER */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 1.5rem;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.separator {
+  margin: 0 8px;
+}
+
+/* NAVIGATION MENU */
+nav ul {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+}
+
+.language-selector {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 16px;
+}
+
+/* Mobile toggle: solo layout, el icono va en components.css */
+.mobile-nav-toggle {
+  display: none;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 999;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  width: 100%;
+  padding: 339px 242px 43px 26px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 38px;
+  overflow: hidden;
+}
+
+.hero-title {
+  width: 100%;
+}
+
+/* NOMBRE (solo layout de bloque) */
+.nombre-laura,
+.nombre-fonseca {
+  display: inline-block;
+}
+
+/* ABOUT SECTION */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 62px;
+  padding: 60px 210px;
+  margin-top: 120px;
+}
+
+.about-img img {
+  display: block;
+}
+
+.about-text {
+  max-width: 800px;
+}
+
+.about-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.about-bottom {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.about-left {
+  flex: 1;
+}
+
+.about-right {
+  flex: 2;
+}
+
+/* BLOQUE INFO (morado) – solo layout */
+.info-block {
+  margin: 100px 97px;
+  padding: 40px;
+  position: relative;
+}
+
+/* GRID DE INFO (Education / Languages / Skills / Services) */
+.info-row {
+  display: flex;
+  gap: 63px;
+}
+
+.info-col-left {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 63px;
+}
+
+.info-col-right {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  gap: 63px;
+}
+
+.info-row-bottom {
+  display: flex;
+  gap: 63px;
+}
+
+.info-row-bottom .info-item {
+  flex: 1;
+}
+
+.info-grid {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Listas dentro de info (layout básico) */
+.info-item ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* SKILLS GRID */
+.skill-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1rem;
+  row-gap: 0;
+  align-items: center;
+}
+
+.skill-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+/* WORK SECTION */
+.work {
+  max-width: 1512px;
+  margin: 0 auto;
+  padding: 80px 40px 40px;
+}
+
+.work h2 {
+  margin-bottom: 20px;
+  padding-left: 5px;
+}
+
+/* Filtros */
+.work-filters {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 25px 0 20px;
+}
+
+/* Projects grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+/* Cada proyecto: imagen + info */
+.project {
+  display: flex;
+  flex-direction: column;
+  min-height: 600px;
+  gap: 24px;
+  padding: 24px 0;
+}
+
+/* Imagen de proyecto */
+.project-image {
+  position: relative;
+  overflow: hidden;
+  height: auto;
+}
+
+.project-image-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Info inferior del proyecto */
+.project-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  padding: 15px 0;
+}
+
+.frame-7 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+/* CONTACT SECTION */
+.contact {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  padding: 24px;
+  margin-top: 80px;
+  height: 750px;
+  text-align: left;
+}
+
+/* Wrapper del footer dentro de contact */
+.footer-wrapper {
+  position: absolute;
+  left: 0;
+  bottom: 40px;
+  width: 100%;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+/* Bloque enlaces de contacto */
+.contact-links {
+  display: flex;
+  gap: 53px;
+  align-items: center;
+}
+
+.contact-links a {
+  display: flex;
+  align-items: center;
+}
+
+/* Bloque de información de autor/derechos */
+.footer-info {
+  text-align: right;
+}
+
+/* Cursor: el “qué es” (posición), no el “cómo se ve” */
+.cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Header tablet */
+@media (max-width: 992px) {
+  .main-header {
+    padding: 10px 5vw;
+  }
+
+  .header-content {
+    max-width: 100%;
+  }
+
+  nav ul {
+    gap: 0;
+  }
+
+  nav ul li {
+    margin-left: 10px;
+  }
+
+  .language-selector {
+    margin-left: 10px;
+  }
+
+  .hero {
+    padding: 260px 10vw 40px 5vw;
+  }
+
+  .about {
+    padding: 40px 10vw;
+    gap: 40px;
+  }
+
+  .about-top {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .info-block {
+    margin: 60px 5vw;
+  }
+
+  .info-row {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .info-col-left,
+  .info-col-right {
+    width: 100%;
+  }
+
+  .info-col-right {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .info-row-bottom {
+    flex-direction: column;
+  }
+}
+
+/* Header + secciones en móvil */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 10px 5vw;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  /* Menú lateral deslizante */
+  nav {
+    position: fixed;
+    top: 56px;
+    right: 0;
+    width: 100%;
+    max-width: 260px;
+    transform: translateX(100%);
+    padding: 16px;
+  }
+
+  nav.active {
+    transform: translateX(0);
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .language-selector {
+    margin-left: 0;
+  }
+
+  .header-content {
+    justify-content: space-between;
+  }
+
+  .hero {
+    padding: 180px 7vw 32px 7vw;
+  }
+
+  .about {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 7vw;
+  }
+
+  .about-img {
+    align-self: center;
+  }
+
+  .info-block {
+    margin: 40px 0;
+    padding: 30px 24px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .info-col-left,
+  .info-col-right {
+    width: 100%;
+  }
+
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work {
+    padding: 40px 7vw 24px;
+  }
+
+  .projects-grid {
+    gap: 24px;
+  }
+
+  .project {
+    min-height: auto;
+    padding: 16px 0;
+  }
+
+  .project-info {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .contact {
+    padding: 24px 7vw;
+    height: 500px;
+  }
+
+  .footer-wrapper {
+    padding: 0 7vw;
+  }
+
+  .contact-links {
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 576px) {
+  .hero {
+    padding: 160px 6vw 28px 6vw;
+  }
+
+  .about {
+    padding: 24px 6vw;
+  }
+
+  .info-block {
+    padding: 20px 16px;
+  }
+
+  .work {
+    padding: 32px 6vw 20px;
+  }
+
+  .projects-grid {
+    gap: 16px;
+  }
+
+  .contact {
+    padding: 20px;
+    height: 400px;
+  }
+
+  .footer-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    bottom: 30px;
+    padding: 0 10px;
+  }
+
+  .contact-links {
+    gap: 18px;
+  }
+}

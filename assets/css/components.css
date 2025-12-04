@@ -1,0 +1,412 @@
+/* =========================
+   COMPONENTES VISUALES
+   (colores, tipografías, sombras…)
+   ========================= */
+
+/* Cursor: cómo se ve */
+.cursor {
+  width: 12px;
+  height: 12px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  mix-blend-mode: difference;
+}
+
+/* HEADER */
+.main-header {
+  background: transparent;
+  mix-blend-mode: difference;
+}
+
+.subtitle {
+  font-family: var(--font-family-base);
+  font-size: var(--text-sm);
+  color: var(--white);
+}
+
+.secondary-title {
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.separator {
+  font-size: var(--text-xs);
+  opacity: 0.7;
+}
+
+/* NAVIGATION MENU: enlaces */
+nav ul li a {
+  font-family: var(--font-family-base);
+  font-size: var(--text-xs);
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: opacity var(--transition-normal) var(--animation-timing);
+}
+
+nav ul li a:hover {
+  opacity: 0.7;
+}
+
+/* Language Selector */
+.language-selector {
+  border-radius: var(--radius-pill);
+  padding: 6px 12px;
+  gap: 8px;
+}
+
+.lang-option {
+  font-size: var(--text-xs);
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.lang-option.active {
+  font-weight: 700;
+}
+
+.lang-separator {
+  font-size: var(--text-xs);
+  opacity: 0.7;
+}
+
+/* Icono del botón móvil (hamburguesa) */
+.mobile-nav-toggle::before,
+.mobile-nav-toggle::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  background-color: #000;
+  transition: transform var(--transition-normal) ease,
+    top var(--transition-normal) ease;
+}
+
+.mobile-nav-toggle::before {
+  top: 8px;
+}
+
+.mobile-nav-toggle::after {
+  top: 18px;
+}
+
+.mobile-nav-toggle.active::before {
+  transform: rotate(45deg);
+  top: 13px;
+}
+
+.mobile-nav-toggle.active::after {
+  transform: rotate(-45deg);
+  top: 13px;
+}
+
+/* HERO */
+.hero {
+  background: var(--primary-color);
+}
+
+.nombre-laura {
+  font-family: var(--font-family-serif);
+  font-size: clamp(3rem, 6.5rem, 6.5rem);
+  color: var(--white);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 0.9;
+  position: relative;
+  margin-top: 50px;
+}
+
+.nombre-laura i {
+  font-style: italic;
+}
+
+.nombre-fonseca {
+  font-family: var(--font-family-base);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  margin-top: 10px;
+  color: var(--white);
+}
+
+/* ABOUT */
+.about-top h1 {
+  font-family: var(--font-family-base);
+  font-size: var(--text-sm);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+.about-top p,
+.about-left p {
+  font-family: var(--font-family-base);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* Imagen de perfil */
+.about-img img {
+  width: 280px;
+  border-radius: 8px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.1);
+}
+
+/* Info block visual (morado) */
+.info-block {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-radius: 24px;
+  box-shadow: var(--shadow-medium);
+}
+
+/* Titulares dentro de info */
+.info-item h3 {
+  font-family: var(--font-family-base);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 12px;
+}
+
+.info-item p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.info-item ul li {
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.info-item ul li b {
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 3px;
+}
+
+/* Skills */
+.skill-category {
+  font-size: 0.9rem;
+}
+
+.skill-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--white);
+  opacity: 0.3;
+}
+
+.skill-dots .dot.filled {
+  opacity: 1;
+}
+
+/* WORK SECTION */
+.work h2 {
+  font-family: var(--font-family-base);
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* Botones de filtro */
+.filter-btn {
+  font-family: var(--font-family-base);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background: none;
+  color: #000;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity var(--transition-normal) var(--animation-timing),
+    transform var(--transition-normal) var(--animation-timing);
+}
+
+.filter-btn.active {
+  opacity: 1;
+  font-weight: 700;
+}
+
+.filter-btn:hover {
+  opacity: 0.7;
+  transform: translateY(-1px);
+}
+
+/* Imagen del proyecto */
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay de luz */
+.project-image-inner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.25),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-slow) ease;
+}
+
+.project-image-inner:hover::after {
+  opacity: 1;
+}
+
+/* Botón "View" */
+.view-btn {
+  font-family: var(--font-family-base);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--white);
+  background-color: rgba(9, 3, 202, 0.9);
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 6px 12px;
+
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: all var(--transition-normal) var(--animation-timing);
+}
+
+.project-image-inner:hover .view-btn {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Info del proyecto */
+.frame-7 h3 {
+  font-family: var(--font-family-serif);
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.div-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid #111111;
+  background: #efefef;
+}
+
+.project-cat {
+  font-family: var(--font-family-base);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.project-year {
+  font-family: var(--font-family-base);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* CONTACT SECTION */
+.contact {
+  background: var(--white);
+}
+
+.contact h2 {
+  font-family: var(--font-family-serif);
+  font-size: 7rem;
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: 0.1em;
+  margin: 0 0 20px 12px;
+}
+
+/* Enlaces de contacto */
+.contact-links a {
+  font-family: var(--font-family-base);
+  text-decoration: none;
+  letter-spacing: 0.16em;
+}
+
+/* Info del footer */
+.footer-info {
+  font-family: var(--font-family-base);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* =========================
+   RESPONSIVE VISUAL
+   (solo cambios de tamaños de fuente, etc.)
+   ========================= */
+
+@media (max-width: 992px) {
+  .nombre-laura {
+    font-size: 5.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .subtitle {
+    font-size: 0.7rem;
+  }
+
+  .secondary-title,
+  .separator {
+    display: none;
+  }
+
+  .nombre-laura {
+    font-size: 3.8rem;
+  }
+
+  .nombre-fonseca {
+    font-size: 0.9rem;
+    letter-spacing: 8px;
+  }
+
+  .about-top h1,
+  .about-top p {
+    font-size: 0.9rem;
+  }
+
+  .contact h2 {
+    font-size: 4.5rem;
+  }
+
+  .footer-info {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .nombre-laura {
+    font-size: 3.2rem;
+  }
+
+  .nombre-fonseca {
+    letter-spacing: 6px;
+  }
+
+  .contact h2 {
+    font-size: 3.75rem;
+    line-height: 1.1;
+  }
+}
