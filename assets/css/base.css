@@ -25,4 +25,13 @@ body {
   --white: #f2f2f2;
   --black: #141414;
   --animation-timing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Tipografías */
+  --font-family-helvetica: "Helvetica Neue", sans-serif;
+  --font-family-serif: "Instrument Serif", serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

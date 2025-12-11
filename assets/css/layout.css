@@ -1,24 +1,141 @@
-/* ===== Header layout ===== */
+/*Header layout*/
 .main-header {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  padding: 2rem 1.5rem;
+  padding: 2rem;
   background: transparent;
   z-index: 100;
-  mix-blend-mode: difference;
+  background-color: var(--primary-color);
 }
+
 .header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: flex-start;
+  font-family: var(--font-family-helvetica);
+  color: var(--white);
+  font-size: 0.8rem;
 }
+
+.separator {
+  margin: 0 10px;
+}
+
+.main-header nav {
+  justify-self: center;
+  display: flex;
+  gap: 2rem;
+}
+
 .main-header nav ul {
   display: flex;
-  justify-content: flex-end;
   gap: 2rem;
   list-style: none;
+  justify-content: center;
+}
+
+.main-header nav ul li {
+  text-decoration: none;
+  transition: opacity 0.3s var(--animation-timing);
+  text-transform: uppercase;
+}
+
+.main-header nav ul li:hover {
+  opacity: 0.7;
+}
+
+.header-year {
+  justify-self: end;
+}
+
+/* Language Selector */
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.lang-option {
+  color: var(--white);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.3s var(--animation-timing);
+  position: relative;
+}
+
+.lang-option.active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+
+.lang-separator {
+  color: var(--white);
+  font-size: 0.8rem;
+  margin: 0 8px;
+  opacity: 0.7;
+}
+
+@media (max-width: 700px) {
+  .main-header nav ul {
+    display: none;
+  }
+}
+
+/*Sección Hero*/
+.hero {
+  background: var(--primary-color);
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.hero-title {
+  color: var(--white);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.nombre-laura {
+  color: var(--white);
+  font-family: var(--font-family-serif);
+  font-size: clamp(4.5rem, 12vw, 18.8rem);
+  line-height: 50%;
+}
+.nombre-fonseca {
+  color: var(--white);
+  font-family: var(--font-family-helvetica);
+  font-size: clamp(3.8rem, 9vw, 13.9rem);
+  line-height: 80%;
+  text-transform: uppercase;
+}
+
+/* Sección About */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 62px;
+  padding: 60px 210px;
+  max-width: 1512px;
+  margin: 120px auto 0;
+  opacity: 1;
+  transform: none;
+}
+.about-img img {
+  width: 409.6px;
+  height: 387px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.about-text {
+  flex: 1;
+}
+.about-text p {
+  color: var(--primary-color);
+  font-family: var(--font-family-helvetica);
+  font-size: 28px;
+  line-height: 100%;
 }
