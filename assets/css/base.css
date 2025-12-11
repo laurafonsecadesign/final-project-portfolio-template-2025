@@ -1,3 +1,7 @@
+/* ===========================
+   RESET + TOKENS GLOBALES
+   =========================== */
+
 *,
 *::before,
 *::after {
@@ -7,53 +11,43 @@
   -webkit-font-smoothing: antialiased;
 }
 
+/* Tokens y variables */
 :root {
-  /* Colores principales */
+  /* Colores base */
   --primary-color: #0903ca;
   --white: #ffffff;
   --black: #000000;
   --light-gray: #f5f5f5;
   --dark-gray: #333333;
 
-  /* Paleta derivada / tokens semánticos */
-  --color-accent: var(--primary-color);
+  /* Paleta semántica */
   --color-bg: #ffffff;
-  --color-bg-muted: #f8f8f8;
-  --color-surface: var(--light-gray);
+  --color-bg-alt: #f7f7f7;
+  --color-surface: #f2f2f2;
   --color-text: #000000;
-  --color-text-muted: #333333;
-  --color-border-soft: rgba(0, 0, 0, 0.1);
-
-  /* Variantes de acento */
-  --color-accent-soft: rgba(9, 3, 202, 0.1);
-  --color-accent-soft-2: rgba(9, 3, 202, 0.4);
-  --color-accent-soft-3: rgba(9, 3, 202, 0.8);
-  --color-accent-bg-tint: rgba(245, 245, 255, 0.3);
-  --color-overlay-light: rgba(255, 255, 255, 0.9);
-
-  /* Animaciones */
-  --animation-timing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --variable-collection-color: rgba(9, 3, 202, 1);
-  --light-slides-white: rgba(255, 255, 255, 1);
+  --color-text-muted: #555555;
+  --color-border-soft: rgba(0, 0, 0, 0.08);
 
   /* Tipografías */
-  --font-family-base: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  --font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-family-alt: "Helvetica", Helvetica, Arial, sans-serif;
   --font-family-serif: "Instrument Serif", serif;
 
   /* Escala tipográfica */
-  --text-xs: clamp(0.75rem, 1.2vw, 0.8rem);
-  --text-sm: clamp(0.875rem, 1.4vw, 0.95rem);
-  --text-base: clamp(1rem, 1.6vw, 1.05rem);
-  --text-lg: clamp(1.125rem, 2vw, 1.25rem);
-  --text-xl: clamp(1.25rem, 2.4vw, 1.5rem);
-  --text-2xl: clamp(1.5rem, 3vw, 2rem);
-  --text-3xl: clamp(2rem, 4vw, 3rem);
+  --text-xs: 0.75rem;
+  --text-sm: 0.85rem;
+  --text-base: 1rem;
+  --text-md: 1.1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 3rem;
 
-  --line-height-base: 1.6;
-  --line-height-tight: 1.2;
+  /* Tamaños hero (para mantener el look original) */
+  --hero-name-laura: 10rem; /* ~160px en desktop */
+  --hero-name-fonseca: 8.5rem;
 
-  /* Espaciado */
+  /* Espaciado base */
   --space-2xs: 0.25rem;
   --space-xs: 0.5rem;
   --space-sm: 0.75rem;
@@ -63,6 +57,11 @@
   --space-2xl: 3rem;
   --space-3xl: 4rem;
 
+  /* Layout */
+  --page-max-width: 1200px;
+  --page-padding-x: clamp(1.5rem, 4vw, 4rem);
+  --page-padding-y: clamp(2.5rem, 5vw, 4rem);
+
   /* Bordes y radios */
   --radius-xs: 4px;
   --radius-sm: 6px;
@@ -70,15 +69,20 @@
   --radius-lg: 16px;
   --radius-pill: 999px;
 
-  /* Sombras / elevación */
+  /* Sombras */
   --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
-  --shadow-medium: 0 18px 50px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 18px 50px rgba(0, 0, 0, 0.1);
 
-  /* Duraciones de transición */
+  /* Transiciones / timing */
   --transition-fast: 150ms;
   --transition-normal: 250ms;
   --transition-slow: 400ms;
+  --animation-timing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
+/* ===========================
+   BASE HTML
+   =========================== */
 
 html {
   scroll-behavior: smooth;
@@ -90,7 +94,7 @@ body {
   margin: 0;
   font-family: var(--font-family-base);
   font-size: var(--text-base);
-  line-height: var(--line-height-base);
+  line-height: 1.6;
   background-color: var(--color-bg);
   color: var(--color-text);
   text-rendering: optimizeLegibility;
@@ -98,7 +102,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Enlaces por defecto */
+/* Enlaces */
 a {
   text-decoration: none;
   color: inherit;
@@ -107,7 +111,7 @@ a:hover {
   text-decoration: none;
 }
 a:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--primary-color);
   outline-offset: 2px;
 }
 
@@ -130,7 +134,7 @@ ol {
   margin: 0;
 }
 
-/* Formularios básicos / inputs */
+/* Formularios / botones */
 button,
 input,
 textarea,
@@ -141,12 +145,11 @@ select {
   border: none;
 }
 
-/* Botones nativos: cursor y reset mínimo */
 button {
   cursor: pointer;
 }
 
-/* Tipografía base de headings (puedes cambiar a Instrument Serif si quieres) */
+/* Headings */
 h1,
 h2,
 h3,
@@ -155,7 +158,7 @@ h5,
 h6 {
   font-family: var(--font-family-base);
   font-weight: 600;
-  line-height: var(--line-height-tight);
+  line-height: 1.2;
   color: var(--color-text);
 }
 
@@ -164,13 +167,24 @@ p {
   font-size: var(--text-base);
 }
 
-/* Elemento de salto accesible (skip link) */
+/* Contenedor general para unificar márgenes laterales */
+.page-wrapper {
+  max-width: var(--page-max-width);
+  margin-inline: auto;
+  padding-inline: var(--page-padding-x);
+}
+
+section {
+  padding-block: var(--page-padding-y);
+}
+
+/* Skip link accesible */
 .skip-link {
   position: absolute;
   left: -999px;
   top: var(--space-sm);
   padding: var(--space-xs) var(--space-sm);
-  background-color: var(--color-accent);
+  background-color: var(--primary-color);
   color: var(--white);
   border-radius: var(--radius-pill);
   z-index: 1000;
@@ -180,7 +194,20 @@ p {
   left: var(--space-sm);
 }
 
-/* Respeto a usuarios con prefers-reduced-motion */
+/* Cursor personalizado (visual, sin !important) */
+.cursor {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+}
+
+/* Respeto a prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     scroll-behavior: auto !important;
