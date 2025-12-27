@@ -1,7 +1,8 @@
+/*Header*/
 .main-header {
   position: fixed;
   width: 100%;
-  padding: 2rem;
+  padding: 1.5rem;
   background: transparent;
   z-index: 100;
   background-color: var(--primary-color);
@@ -22,7 +23,7 @@
 
 .main-header nav ul li {
   text-decoration: none;
-  transition: opacity 0.3s var(--animation-timing);
+  transition: opacity 0.3s;
   text-transform: uppercase;
 }
 
@@ -59,6 +60,7 @@
   opacity: 0.7;
 }
 
+/*Hero*/
 .hero-title {
   color: var(--white);
   margin-top: 0;
@@ -78,8 +80,9 @@
   text-transform: uppercase;
 }
 
+/*About*/
 .about-img img {
-  width: clamp(1rem, 20vw, 300px);
+  width: clamp(1rem, 40vw, 300px);
   height: auto;
   border-radius: 10px;
   object-fit: cover;
@@ -90,4 +93,121 @@
   font-family: var(--font-family-helvetica);
   font-size: clamp(1rem, 2vw, 24px);
   line-height: 100%;
+}
+
+/*Work*/
+
+.work {
+  opacity: 1;
+  transform: none;
+}
+
+.work.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.work h2 {
+  font-family: var(--font-family-helvetica);
+  font-size: 223px;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Filters */
+
+.filter-btn {
+  background: none;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  font-family: var(--font-family-helvetica);
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 24px;
+  cursor: none;
+  transition: all 0.3s;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  line-height: 100%;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+/* Project card */
+
+.project {
+  background: var(--white);
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.project-image img {
+  transition: transform 0.5s;
+}
+
+.project:hover .project-image img {
+  transform: scale(1.05);
+}
+
+/* Overlay */
+
+.project-image .project-details {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(9, 3, 202, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.project:hover .project-image .project-details {
+  opacity: 1;
+}
+
+/* Buttons */
+
+.view-btn {
+  color: var(--white);
+  border: 1px solid var(--white);
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.view-btn:hover {
+  background-color: var(--white);
+  color: var(--primary-color);
+}
+
+/* Text */
+
+.project h3 {
+  color: var(--primary-color);
+  font-family: var(--font-family-serif);
+  font-size: 70px;
+}
+
+.project-year {
+  font-size: 16px;
+  color: var(--primary-color);
+  font-family: var(--font-family-helvetica);
+}
+
+.project-cat {
+  font-size: 16px;
+  color: var(--primary-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 24px;
+  border: 1px solid var(--primary-color);
+  font-family: var(--font-family-helvetica);
 }
