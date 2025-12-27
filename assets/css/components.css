@@ -2,7 +2,7 @@
 .main-header {
   position: fixed;
   width: 100%;
-  padding: 1.5rem;
+  padding: 2rem;
   background: transparent;
   z-index: 100;
   background-color: var(--primary-color);
@@ -109,7 +109,7 @@
 
 .work h2 {
   font-family: var(--font-family-helvetica);
-  font-size: 223px;
+  font-size: clamp(5rem, 12vw, 15rem);
   color: var(--primary-color);
   margin-bottom: 30px;
   text-align: center;
@@ -198,6 +198,7 @@
   font-size: 16px;
   color: var(--primary-color);
   font-family: var(--font-family-helvetica);
+  vertical-align: top;
 }
 
 .project-cat {
