@@ -125,9 +125,9 @@
   transform: none;
 }
 .about-img img {
-  width: 409.6px;
-  height: 387px;
-  border-radius: 20px;
+  width: clamp(1rem, 20vw, 300px);
+  height: auto;
+  border-radius: 10px;
   object-fit: cover;
 }
 .about-text {
@@ -136,6 +136,27 @@
 .about-text p {
   color: var(--primary-color);
   font-family: var(--font-family-helvetica);
-  font-size: 28px;
+  font-size: clamp(1rem, 2vw, 24px);
   line-height: 100%;
+}
+
+@media (max-width: 1024px) {
+  .about {
+    gap: 40px;
+    padding: 60px 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    gap: 30px;
+    padding: 2rem;
+    margin: 80px auto 0;
+  }
+  .about-img img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+  }
 }
