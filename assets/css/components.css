@@ -202,16 +202,12 @@
   font-family: var(--font-family-helvetica);
 }
 
-/* =========================
-   CONTACT COMPONENTS
-   ========================= */
+/*Contact/Footer*/
 
 .contact {
   background-color: var(--primary-color);
   color: var(--white);
 }
-
-/* Title */
 
 .contact h2 {
   font-family: "Helvetica Neue-Medium", Helvetica;
@@ -220,8 +216,6 @@
   text-transform: uppercase;
   margin-bottom: 3rem;
 }
-
-/* Links */
 
 .contact-links a {
   font-family: "Helvetica-Bold", Helvetica;
@@ -235,8 +229,6 @@
 .contact-links a:hover {
   opacity: 0.7;
 }
-
-/* Footer info */
 
 .footer-info {
   font-family: "Helvetica-Bold", Helvetica;

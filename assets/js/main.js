@@ -366,6 +366,12 @@ const translations = {
     instagram: "INSTAGRAM",
     linkedin: "LINKEDIN",
     by_laura: "BY LAURA FONSECA<br>2025<br>ALL RIGHTS RESERVED",
+
+    // 404 section
+    error_title: "Page Not Found",
+    error_description:
+      "Oops! The page you're looking for doesn't exist. Let's get you back on track.",
+    back_home: "Back Home",
   },
   es: {
     // Header
@@ -391,6 +397,12 @@ const translations = {
     instagram: "INSTAGRAM",
     linkedin: "LINKEDIN",
     by_laura: "LAURA FONSECA<br>2025<br>TODOS LOS DERECHOS RESERVADOS",
+
+    // 404 section
+    error_title: "Página No Encontrada",
+    error_description:
+      "¡Ups! La página que buscas no existe. Volvamos al camino correcto.",
+    back_home: "Volver al Inicio",
   },
 };
 
