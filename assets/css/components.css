@@ -125,7 +125,6 @@
   font-size: 16px;
   padding: 8px 16px;
   border-radius: 24px;
-  cursor: none;
   transition: all 0.3s;
   letter-spacing: -0.32px;
   line-height: 100%;
@@ -222,7 +221,7 @@
   font-size: 1rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--white);
   transition: opacity 0.3s var(--animation-timing);
 }
 
@@ -237,4 +236,103 @@
   letter-spacing: -0.02em;
   line-height: 1.1;
   text-align: center;
+}
+
+/* Project Page */
+
+/* Project Hero Components */
+.project-title {
+  color: var(--white);
+  font-family: var(--font-family-helvetica);
+  font-size: clamp(4rem, 12vw, 15rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.project-category,
+.project-year {
+  color: var(--white);
+  font-family: var(--font-family-helvetica);
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Project Overview Components */
+.project-description h2 {
+  color: var(--primary-color);
+  font-family: var(--font-family-helvetica);
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.project-description p {
+  color: var(--primary-color);
+  font-family: var(--font-family-helvetica);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Gallery Images */
+.gallery-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s var(--animation-timing);
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.02);
+}
+
+.identity-img {
+  object-fit: contain;
+  background-color: var(--primary-color);
+}
+
+/* Project Process Components */
+.project-process h2 {
+  color: var(--primary-color);
+  font-family: var(--font-family-helvetica);
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.process-item h3 {
+  color: var(--primary-color);
+  font-family: var(--font-family-helvetica);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.process-item p {
+  color: var(--primary-color);
+  font-family: var(--font-family-helvetica);
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Next Project Components */
+.next-label {
+  color: var(--primary-color);
+  font-family: var(--font-family-helvetica);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.next-title {
+  color: var(--primary-color);
+  font-family: var(--font-family-serif);
+  font-size: clamp(3rem, 8vw, 8rem);
+  line-height: 1;
+  margin: 0;
 }
