@@ -2,7 +2,7 @@
 .main-header {
   position: fixed;
   width: 100%;
-  padding: 2rem;
+  padding: clamp(1.25rem, 2vw, 2rem);
   background: transparent;
   z-index: 100;
   background-color: var(--primary-color);
