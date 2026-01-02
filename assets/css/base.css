@@ -17,6 +17,7 @@ body {
   margin: 0;
   height: 100%;
   overflow-x: hidden;
+  cursor: none;
 }
 
 /* Variables */
@@ -34,4 +35,16 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+/* Custom Cursor */
+.cursor {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
 }

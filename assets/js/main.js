@@ -46,38 +46,6 @@ function initPageAnimations() {
     }
   );
 
-  gsap.fromTo(
-    ".header-content .subtitle span",
-    {
-      y: 20,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      stagger: 0.1,
-      duration: 0.8,
-      delay: 0.3,
-      ease: "power2.out",
-    }
-  );
-
-  gsap.fromTo(
-    "nav ul li",
-    {
-      y: 20,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      stagger: 0.1,
-      duration: 0.8,
-      delay: 0.5,
-      ease: "power2.out",
-    }
-  );
-
   // Activate CSS animations when elements are visible
   const animatedElements = document.querySelectorAll(
     ".work h2.scale-in, .contact h2.scale-in, .work-filters.slide-up"
@@ -139,46 +107,6 @@ function initPageAnimations() {
     }
   );
 
-  // Info block animations
-  gsap.fromTo(
-    ".info-col-left",
-    {
-      x: -50,
-      opacity: 0,
-    },
-    {
-      x: 0,
-      opacity: 1,
-      duration: 0.8,
-      scrollTrigger: {
-        trigger: ".info-block",
-        start: "top 80%",
-      },
-      ease: "power2.out",
-      clearProps: "opacity",
-    }
-  );
-
-  gsap.fromTo(
-    ".info-col-right .info-item",
-    {
-      y: 50,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      stagger: 0.2,
-      duration: 0.8,
-      scrollTrigger: {
-        trigger: ".info-block",
-        start: "top 80%",
-      },
-      ease: "power2.out",
-      clearProps: "opacity",
-    }
-  );
-
   // Hero section animations
   const heroTl = gsap.timeline({ delay: 0.3 });
 
@@ -210,17 +138,6 @@ function initPageAnimations() {
     },
     "-=0.8"
   );
-
-  // Add some letter animation to the "a" characters in Laura
-  gsap.to(".nombre-laura i", {
-    y: -10,
-    duration: 1.5,
-    repeat: -1,
-    yoyo: true,
-    ease: "power1.inOut",
-    stagger: 0.2,
-    delay: 1.5,
-  });
 
   // Work section animations
   gsap.fromTo(
@@ -331,7 +248,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // Filtros de proyectos
-const filterBtns = document.querySelectorAll(".filter-btn");
+const filterBtns = document.querySelectorAll(".button[data-filter]");
 const projects = document.querySelectorAll(".project");
 filterBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -372,41 +289,6 @@ document.querySelectorAll("nav a").forEach((anchor) => {
     window.scrollTo({
       top: target.offsetTop,
       behavior: "smooth",
-    });
-  });
-});
-
-// Project hover animations
-const projectItems = document.querySelectorAll(".project");
-projectItems.forEach((item) => {
-  const image = item.querySelector(".project-image img");
-  const details = item.querySelector(".project-details");
-
-  item.addEventListener("mouseenter", () => {
-    gsap.to(image, {
-      scale: 1.05,
-      duration: 0.4,
-      ease: "power2.out",
-    });
-
-    gsap.to(details, {
-      opacity: 1,
-      duration: 0.3,
-      ease: "power2.out",
-    });
-  });
-
-  item.addEventListener("mouseleave", () => {
-    gsap.to(image, {
-      scale: 1,
-      duration: 0.4,
-      ease: "power2.out",
-    });
-
-    gsap.to(details, {
-      opacity: 0,
-      duration: 0.3,
-      ease: "power2.out",
     });
   });
 });
@@ -462,8 +344,6 @@ if (window.innerWidth <= 768) {
 const translations = {
   en: {
     // Header
-    portfolio: "Portfolio",
-    multimedia_design: "Multimedia & Graphic Design",
     about: "ABOUT",
     work: "WORK",
     contact: "CONTACT",
@@ -472,36 +352,7 @@ const translations = {
     intro_hi: "Hi, I'm Laura Fonseca!",
     intro_description:
       "I'm a Multimedia & Graphic Design student with a passion for creating meaningful visual experiences. My interests lie in Branding and UX/UI design, where I love blending creativity with strategy to craft designs that are both beautiful and functional.",
-
-    // Info block
-    education: "Education",
-    bachelor_degree: "Bachelor in Multimedia & Graphic Design",
-    technical_baccalaureate: "Technical Baccalaureate",
-    languages: "Languages",
-    spanish_native: "Spanish (Native)",
-    english_c2: "English (C2 - Proficiency Cambridge Certificate)",
-    german_a1: "German (A1 - Goethe Institute)",
-    skills: "Skills",
-    creativity: "Creativity",
-    communication: "Communication",
-    problem_solving: "Problem-Solving",
-    adaptability: "Adaptability",
-    time_management: "Time Management",
-    collaboration: "Collaboration",
-    experience: "Experience",
-    basketball_coach: "Basketball Coach",
-    english_teacher: "English teacher",
-    english_teacher_desc: "For children aged 6 to 12",
-    waitress: "Waitress",
-    others: "Others",
-    language_immersion: "Language immersion",
-    language_immersion_desc: "Bury St. Edmunds: Culford School. January 2017.",
-    academic_debate: "Academic debate",
-    june: "June",
-    january: "January",
-    datecoach: "(October 2024 – Present)",
-    dateteacher: "(November 2023 – Present)",
-    datewaitress: "(September – November 2023)",
+    download_cv: "Download CV",
 
     // Work section
     all: "All",
@@ -518,8 +369,6 @@ const translations = {
   },
   es: {
     // Header
-    portfolio: "Portafolio",
-    multimedia_design: "Diseño Multimedia y Gráfico",
     about: "ACERCA",
     work: "TRABAJO",
     contact: "CONTACTO",
@@ -528,36 +377,7 @@ const translations = {
     intro_hi: "¡Hola, soy Laura Fonseca!",
     intro_description:
       "Soy estudiante de Diseño Multimedia y Gráfico con un fuerte interés en el Branding y el diseño UX/UI, las áreas que más me apasionan. Disfruto explorar cómo la creatividad puede unirse a la estrategia para crear experiencias visuales que no solo sean atractivas, sino también funcionales y significativas.",
-
-    // Info block
-    education: "Educación",
-    bachelor_degree: "Licenciatura en Diseño Multimedia y Gráfico",
-    technical_baccalaureate: "Bachillerato Técnico",
-    languages: "Idiomas",
-    spanish_native: "Español (Nativo)",
-    english_c2: "Inglés (C2 - Certificado Cambridge Proficiency)",
-    german_a1: "Alemán (A1 - Goethe Institute)",
-    skills: "Habilidades",
-    creativity: "Creatividad",
-    communication: "Comunicación",
-    problem_solving: "Resolución de Problemas",
-    adaptability: "Adaptabilidad",
-    time_management: "Gestión del Tiempo",
-    collaboration: "Colaboración",
-    experience: "Experiencia",
-    basketball_coach: "Entrenadora de Baloncesto",
-    english_teacher: "Profesora de inglés",
-    english_teacher_desc: "Para niños de 6 a 12 años",
-    waitress: "Camarera",
-    others: "Otros",
-    language_immersion: "Inmersión lingüística",
-    language_immersion_desc: "Bury St. Edmunds: Culford School. Enero 2017.",
-    academic_debate: "Debate académico",
-    june: "Junio",
-    january: "Enero",
-    datecoach: "(Octubre 2024 – Presente)",
-    dateteacher: "(Noviembre 2023 – Presente)",
-    datewaitress: "(Septiembre – Noviembre 2023)",
+    download_cv: "Descargar CV",
 
     // Work section
     all: "Todo",
@@ -612,19 +432,24 @@ function translatePage() {
 
 // 5. INICIALIZACIÓN
 document.addEventListener("DOMContentLoaded", function () {
-  // Recuperar idioma guardado (opcional)
+  // Detectar idioma del navegador o recuperar idioma guardado
   const savedLanguage = localStorage.getItem("preferredLanguage");
   if (savedLanguage && translations[savedLanguage]) {
     currentLanguage = savedLanguage;
+  } else {
+    currentLanguage = detectBrowserLanguage();
   }
 
   // Configurar event listeners para los botones de idioma
-  document
-    .getElementById("lang-es")
-    .addEventListener("click", () => changeLanguage("es"));
-  document
-    .getElementById("lang-en")
-    .addEventListener("click", () => changeLanguage("en"));
+  const langEnBtn = document.getElementById("lang-en");
+  const langEsBtn = document.getElementById("lang-es");
+
+  if (langEnBtn) {
+    langEnBtn.addEventListener("click", () => changeLanguage("en"));
+  }
+  if (langEsBtn) {
+    langEsBtn.addEventListener("click", () => changeLanguage("es"));
+  }
 
   // Aplicar idioma inicial
   changeLanguage(currentLanguage);
@@ -638,4 +463,3 @@ function detectBrowserLanguage() {
   }
   return "en";
 }
-currentLanguage = detectBrowserLanguage();
