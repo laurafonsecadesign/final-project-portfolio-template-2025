@@ -324,7 +324,6 @@
 /* Next Project */
 .next-project {
   padding: clamp(1.25rem, 2vw, 2rem);
-  margin: 120px auto 80px;
   display: flex;
   justify-content: center;
 }
