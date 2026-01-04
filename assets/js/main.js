@@ -31,20 +31,22 @@ if (mobileNavToggle) {
 
 // Page animations
 function initPageAnimations() {
-  // Header animation
-  gsap.fromTo(
-    ".main-header",
-    {
-      y: -50,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 0.8,
-      ease: "power2.out",
-    }
-  );
+  // Header animation (only on pages that have this element)
+  if (document.querySelector(".main-header")) {
+    gsap.fromTo(
+      ".main-header",
+      {
+        y: -50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out",
+      }
+    );
+  }
 
   // Activate CSS animations when elements are visible
   const animatedElements = document.querySelectorAll(
@@ -68,178 +70,196 @@ function initPageAnimations() {
     observer.observe(el);
   });
 
-  // About section animations
-  gsap.fromTo(
-    ".about-img",
-    {
-      y: 50,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 0.8,
-      scrollTrigger: {
-        trigger: ".about-img",
-        start: "top 80%",
+  // About section animations (only on pages that have these elements)
+  if (document.querySelector(".about-img")) {
+    gsap.fromTo(
+      ".about-img",
+      {
+        y: 50,
+        opacity: 0,
       },
-      ease: "power2.out",
-      clearProps: "opacity",
-    }
-  );
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: ".about-img",
+          start: "top 80%",
+        },
+        ease: "power2.out",
+        clearProps: "opacity",
+      }
+    );
+  }
 
-  gsap.fromTo(
-    ".about-text",
-    {
-      y: 50,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 0.8,
-      scrollTrigger: {
-        trigger: ".about-text",
-        start: "top 80%",
+  if (document.querySelector(".about-text")) {
+    gsap.fromTo(
+      ".about-text",
+      {
+        y: 50,
+        opacity: 0,
       },
-      ease: "power2.out",
-      clearProps: "opacity",
-    }
-  );
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: ".about-text",
+          start: "top 80%",
+        },
+        ease: "power2.out",
+        clearProps: "opacity",
+      }
+    );
+  }
 
-  // Hero section animations
-  const heroTl = gsap.timeline({ delay: 0.3 });
+  // Hero section animations (only on pages that have these elements)
+  if (document.querySelector(".nombre-laura")) {
+    const heroTl = gsap.timeline({ delay: 0.3 });
 
-  heroTl.fromTo(
-    ".nombre-laura",
-    {
-      y: 80,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 1.2,
-      ease: "power3.out",
-    }
-  );
-
-  heroTl.fromTo(
-    ".nombre-fonseca",
-    {
-      y: 50,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      ease: "power2.out",
-    },
-    "-=0.8"
-  );
-
-  // Work section animations
-  gsap.fromTo(
-    ".work h2",
-    {
-      scale: 0.8,
-      opacity: 0,
-    },
-    {
-      scale: 1,
-      opacity: 1,
-      duration: 0.8,
-      scrollTrigger: {
-        trigger: ".work h2",
-        start: "top 80%",
+    heroTl.fromTo(
+      ".nombre-laura",
+      {
+        y: 80,
+        opacity: 0,
       },
-      ease: "power2.out",
-      clearProps: "opacity",
-    }
-  );
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power3.out",
+      }
+    );
 
-  gsap.fromTo(
-    ".work-filters",
-    {
-      y: 30,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 0.8,
-      delay: 0.2,
-      scrollTrigger: {
-        trigger: ".work-filters",
-        start: "top 90%",
-      },
-      ease: "power2.out",
-      clearProps: "opacity",
+    if (document.querySelector(".nombre-fonseca")) {
+      heroTl.fromTo(
+        ".nombre-fonseca",
+        {
+          y: 50,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+        },
+        "-=0.8"
+      );
     }
-  );
+  }
 
-  // Animations for projects
-  gsap.fromTo(
-    ".project",
-    {
-      y: 20,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      stagger: 0.15,
-      duration: 0.7,
-      scrollTrigger: {
-        trigger: ".projects-grid",
-        start: "top 85%",
+  // Work section animations (only on pages that have these elements)
+  if (document.querySelector(".work h2")) {
+    gsap.fromTo(
+      ".work h2",
+      {
+        scale: 0.8,
+        opacity: 0,
       },
-      ease: "power1.out",
-      clearProps: "opacity", // Clear opacity after animation to prevent flickering
-    }
-  );
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: ".work h2",
+          start: "top 80%",
+        },
+        ease: "power2.out",
+        clearProps: "opacity",
+      }
+    );
+  }
 
-  // Contact section animations
-  gsap.fromTo(
-    ".contact h2",
-    {
-      y: 50,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 0.8,
-      scrollTrigger: {
-        trigger: ".contact",
-        start: "top 80%",
+  if (document.querySelector(".work-filters")) {
+    gsap.fromTo(
+      ".work-filters",
+      {
+        y: 30,
+        opacity: 0,
       },
-      ease: "power2.out",
-      clearProps: "opacity",
-    }
-  );
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: ".work-filters",
+          start: "top 90%",
+        },
+        ease: "power2.out",
+        clearProps: "opacity",
+      }
+    );
+  }
 
-  gsap.fromTo(
-    ".contact-symbol img",
-    {
-      scale: 0,
-      opacity: 0,
-      rotation: -45,
-    },
-    {
-      scale: 1,
-      opacity: 1,
-      rotation: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".contact-symbol",
-        start: "top 80%",
+  // Animations for projects (only on pages that have this element)
+  if (document.querySelector(".projects-grid")) {
+    gsap.fromTo(
+      ".project",
+      {
+        y: 20,
+        opacity: 0,
       },
-      ease: "back.out(1.7)",
-      clearProps: "opacity",
-    }
-  );
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.15,
+        duration: 0.7,
+        scrollTrigger: {
+          trigger: ".projects-grid",
+          start: "top 85%",
+        },
+        ease: "power1.out",
+        clearProps: "opacity", // Clear opacity after animation to prevent flickering
+      }
+    );
+  }
+
+  // Contact section animations (only on pages that have these elements)
+  if (document.querySelector(".contact h2")) {
+    gsap.fromTo(
+      ".contact h2",
+      {
+        y: 50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: ".contact",
+          start: "top 80%",
+        },
+        ease: "power2.out",
+        clearProps: "opacity",
+      }
+    );
+  }
+
+  if (document.querySelector(".contact-symbol img")) {
+    gsap.fromTo(
+      ".contact-symbol img",
+      {
+        scale: 0,
+        opacity: 0,
+        rotation: -45,
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        rotation: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".contact-symbol",
+          start: "top 80%",
+        },
+        ease: "back.out(1.7)",
+        clearProps: "opacity",
+      }
+    );
+  }
 }
 
 // Initialize animations on page load
@@ -425,6 +445,7 @@ const translations = {
         },
       },
       nogue: {
+        category: "Editorial",
         overview_1:
           "NOGUE is a biannual, satirical fashion magazine that critiques consumerism, fast fashion, and performative luxury through irony, parody, and bold visual storytelling. NOGUE mimics high-fashion aesthetics only to subvert them with chaotic layouts, awkward poses, and irreverent content. Designed collaboratively, the magazine merges theatrical photography, hand-drawn illustrations, and playful typography to expose the absurdity of the fashion world while celebrating imperfection, humor, and rebellion.",
         overview_2:
@@ -445,6 +466,7 @@ const translations = {
         },
       },
       cerditos: {
+        category: "Branding",
         overview:
           "For this project, I developed 3 Cerditos, a fictional wine brand created as part of a design exploration. The concept, branding, and packaging were entirely crafted by me, with the goal of imagining a wine that breaks away from traditional formality and speaks directly to a young, urban audience through humor, storytelling, and a playful visual identity.",
         challenge:
@@ -562,6 +584,7 @@ const translations = {
         },
       },
       nogue: {
+        category: "Editorial",
         overview_1:
           "NOGUE es una revista de moda satírica bienal que critica el consumismo, la moda rápida y el lujo performativo a través de ironía, parodia y narrativa visual audaz. NOGUE imita la estética de la moda de alta costura solo para subvertirla con diseños caóticos, poses incómodas y contenido irreverente. Diseñada colaborativamente, la revista fusiona fotografía teatral, ilustraciones hechas a mano y tipografía juguetona para exponer el absurdo del mundo de la moda mientras celebra la imperfección, el humor y la rebelión.",
         overview_2:
@@ -582,6 +605,7 @@ const translations = {
         },
       },
       cerditos: {
+        category: "Branding",
         overview:
           "Para este proyecto, desarrollé 3 Cerditos, una marca de vino ficticia creada como parte de una exploración de diseño. El concepto, la marca y el empaque fueron completamente elaborados por mí, con el objetivo de imaginar un vino que se aleja de la formalidad tradicional y se dirige directamente a una audiencia joven y urbana a través del humor, la narración y una identidad visual juguetona.",
         challenge:
@@ -625,11 +649,15 @@ let currentLanguage = "en";
 function changeLanguage(lang) {
   currentLanguage = lang;
 
-  // Update active language button classes
+  // Update active language button classes (only on pages that have these elements)
   document.querySelectorAll(".lang-option").forEach((option) => {
     option.classList.remove("active");
   });
-  document.getElementById(`lang-${lang}`).classList.add("active");
+
+  const langBtn = document.getElementById(`lang-${lang}`);
+  if (langBtn) {
+    langBtn.classList.add("active");
+  }
 
   // Translate all elements
   translatePage();
