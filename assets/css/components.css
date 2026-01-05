@@ -336,3 +336,69 @@
   line-height: 1;
   margin: 0;
 }
+
+/* Error Page */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+.error-number {
+  font-family: var(--font-family-serif);
+  font-size: clamp(8rem, 20vw, 20rem);
+  color: var(--primary-color);
+  line-height: 1;
+  margin: 0;
+  font-weight: 400;
+}
+
+.error-title {
+  font-family: var(--font-family-helvetica);
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--primary-color);
+  margin: 2rem 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.error-description {
+  font-family: var(--font-family-helvetica);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: var(--black);
+  max-width: 500px;
+  margin: 1rem 0 3rem;
+  line-height: 1.6;
+}
+
+.error-button {
+  background: var(--primary-color);
+  color: var(--white);
+  border: 2px solid var(--primary-color);
+  padding: 12px 40px;
+  border-radius: 30px;
+  font-family: var(--font-family-helvetica);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.error-button:hover {
+  background: transparent;
+  color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .error-container {
+    margin-top: 5rem;
+  }
+}

@@ -37,8 +37,12 @@ Prettier & ESLint – code formatting and linting
 
 📁 Project Structure
 ├── index.html
-├── pages/
-│ └── 404.html
+├── 404.html
+├── applaws.html
+├── lallorona.html
+├── velox.html
+├── nogue.html
+├── 3cerditos.html
 ├── assets/
 │ ├── images/
 │ ├── fonts/
@@ -104,6 +108,8 @@ Semantic HTML elements
 prefers-reduced-motion respected
 
 No color-only information
+
+Accesibility validated in Chrome Lighthouse.
 
 ⚡ Performance Optimizations
 
