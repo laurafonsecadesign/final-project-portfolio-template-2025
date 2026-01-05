@@ -1,8 +1,2 @@
-# Archivos de sistema
 .DS_Store
-Thumbs.db
-
-# Logs y dependencias (si usaras node en el futuro)
-node_modules/
-*.log
-.vscode/
+.key, credentials
