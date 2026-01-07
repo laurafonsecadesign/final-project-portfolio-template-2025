@@ -30,7 +30,6 @@ This project serves as the central hub for my professional identity, demonstrati
 - [ ] HTML5 (semantic markup)
 - [ ] CSS3 (responsive design)
 - [ ] JavaScript (if applicable)
-- [ ] Other: \***\*\_\_\_\*\***
 
 ### Accessibility Goals
 
