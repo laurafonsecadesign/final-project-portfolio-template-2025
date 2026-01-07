@@ -1,0 +1,56 @@
+# Project metadata - fill this out by Week 4
+# This file will be used to generate your entry in the course showroom
+
+# Basic information
+handle: laurafonsecadesign
+name: Laura Fonseca Ortés
+email: laura.fonseca@alumnos.udit.es
+
+# URLs
+github_url: https://github.com/laurafonsecadesign
+# The project_url is usually the LIVE link (GitHub Pages)
+project_url: https://laurafonsecadesign.github.io/final-project-portfolio-template-2025/
+repository_url: https://github.com/laurafonsecadesign/final-project-portfolio-template-2025
+
+# Project details
+title:
+  es: Laura Fonseca Portfolio
+  en: Laura Fonseca Portfolio
+
+abstract:
+  es: |
+    Plantilla de portafolio profesional con estética "Modern Editorial".
+    Diseñada para presentar proyectos de Branding y UX/UI, cuenta con un sistema bilingüe (EN/ES), tipografía fluida y animaciones avanzadas con GSAP para crear una experiencia inmersiva y de alto rendimiento.
+  en: |
+    A professional portfolio template with a "Modern Editorial" aesthetic.
+    Designed to showcase Branding and UX/UI projects, it features a bilingual system (EN/ES), fluid typography, and advanced GSAP animations to create an immersive, high-performance user experience.
+
+# Technical tags (choose relevant ones)
+tags:
+  - html5
+  - css3
+  - javascript
+  - responsive-design
+  - accessibility
+  - gsap
+  - localization
+  - fluid-typography
+
+# Learning objectives you're focusing on
+learning_focus:
+  - semantic-html
+  - mobile-first-design
+  - web-accessibility
+  - js-modules
+  - performance-optimization
+
+# Week tracking (update as you go)
+# Marking all as true since you are ready for final submission
+milestones:
+  week_1_setup: true
+  week_2_brief: true
+  week_4_metadata: true
+  week_5_showcase: true
+
+# Optional: link to your project brief
+brief_url: project-brief.md

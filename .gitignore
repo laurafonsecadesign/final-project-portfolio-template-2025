@@ -1,2 +1,5 @@
 .DS_Store
-.key, credentials
+.env
+.env*
+_site/
+*.lock 
